@@ -1,0 +1,55 @@
+.card { background: var(--bg2); border: 1.5px solid var(--b2); border-radius: 14px; overflow: hidden; margin-bottom: 14px; transition: border-color 0.25s; box-shadow: 0 2px 16px rgba(0,0,0,.35); }
+.unlocked { border-color: var(--b2); }
+.done     { border-color: rgba(48,240,144,.45); }
+.locked   { opacity: 0.35; pointer-events: none; }
+
+.head { display: flex; align-items: center; gap: 13px; padding: 16px 18px; cursor: pointer; user-select: none; }
+.icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-family: var(--mono); font-weight: 700; }
+.ic-blue   { background: rgba(90,180,255,.15); color: var(--blue); border: 1px solid rgba(90,180,255,.3); }
+.ic-purple { background: rgba(196,160,255,.15); color: var(--purple); border: 1px solid rgba(196,160,255,.3); }
+.ic-green  { background: rgba(48,240,144,.15); color: var(--green); border: 1px solid rgba(48,240,144,.3); }
+.ic-amber  { background: rgba(255,192,64,.15);  color: var(--amber); border: 1px solid rgba(255,192,64,.3); }
+.ic-red    { background: rgba(255,96,112,.15);  color: var(--red);   border: 1px solid rgba(255,96,112,.3); }
+
+.meta { flex: 1; }
+.meta h3 { font-family: var(--head); font-size: 15px; font-weight: 700; margin-bottom: 2px; color: var(--t1); }
+.meta p  { font-size: 11px; color: var(--t2); font-family: var(--mono); }
+
+.badge { font-family: var(--mono); font-size: 10px; padding: 5px 11px; border-radius: 20px; white-space: nowrap; font-weight: 700; }
+.bdDone { background: rgba(48,240,144,.12); color: var(--green); border: 1px solid rgba(48,240,144,.45); }
+.bdNew  { background: rgba(90,180,255,.12); color: var(--blue);  border: 1px solid rgba(90,180,255,.4); }
+.bdLock { background: var(--b1); color: var(--t3); }
+
+.body { padding: 0 18px 22px; animation: slideDown 0.25s ease; }
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+
+.content { margin-bottom: 6px; }
+.content p { font-size: 14px; color: var(--t2); line-height: 1.8; margin-bottom: 10px; }
+.content strong { color: var(--t1); }
+
+:global(.fbox) { background: var(--bg4); border: 1.5px solid var(--b2); border-radius: 10px; padding: 14px 18px; font-family: var(--mono); font-size: 15px; text-align: center; margin: 12px 0; letter-spacing: .02em; color: var(--t1); }
+:global(.fb) { color: var(--blue); font-weight: 700; }
+:global(.fg) { color: var(--green); font-weight: 700; }
+:global(.fr) { color: var(--red); font-weight: 700; }
+:global(.fa) { color: var(--amber); font-weight: 700; }
+
+:global(.clist) { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+:global(.citem) { display: flex; align-items: flex-start; gap: 11px; background: var(--bg4); border: 1.5px solid var(--b2); border-radius: 9px; padding: 12px 14px; }
+:global(.cnum) { width: 22px; height: 22px; border-radius: 6px; background: rgba(196,160,255,.18); color: var(--purple); font-family: var(--mono); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; border: 1px solid rgba(196,160,255,.3); }
+:global(.ctxt) { font-size: 13px; color: var(--t2); line-height: 1.65; }
+:global(.ctxt strong) { color: var(--t1); }
+
+.quiz { margin-top: 16px; padding-top: 16px; border-top: 1.5px solid var(--b2); }
+.quizQ { font-size: 13px; color: var(--t1); font-family: var(--mono); margin-bottom: 11px; font-weight: 600; }
+.quizOpts { display: flex; flex-wrap: wrap; gap: 8px; }
+.opt { background: var(--bg4); border: 1.5px solid var(--b2); border-radius: 8px; padding: 9px 14px; font-size: 12px; font-family: var(--mono); color: var(--t2); cursor: pointer; transition: all 0.15s; }
+.opt:hover:not(:disabled) { border-color: var(--b3); color: var(--t1); background: var(--bg3); }
+.opt:disabled { cursor: default; }
+.correct { background: rgba(48,240,144,.12) !important; border-color: var(--green) !important; color: var(--green) !important; }
+.wrong   { background: rgba(255,96,112,.12) !important; border-color: var(--red)   !important; color: var(--red)   !important; }
+.shake { animation: shake 0.3s ease; }
+@keyframes shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+
+.feedback { font-size: 12px; font-family: var(--mono); margin-top: 10px; min-height: 18px; font-weight: 600; }
+.fbOk  { color: var(--green); }
+.fbBad { color: var(--red); }
